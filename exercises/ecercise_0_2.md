@@ -11,11 +11,18 @@ b) Determine the `relationship` between member and books.
 c) Draw a `conceptual ERD` using crow foots notation.
 
 
+### Solution
 
+a) `entities` and `attributes` 
+    book: title, author, ISBN number
+    member: membership ID, name, contact information
 
+b) `relationship`    
+    borrow
 
+c) `conceptual ERD` 
 
-
+<img src = "../assets/initial_conceptual_model_ex2.png" width=300>
 
 
 
