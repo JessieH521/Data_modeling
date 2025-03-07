@@ -27,6 +27,11 @@ Professor: id, name, department, university
 c)
 <img src = "../assets/initial_conceptual_model_ex5.png" width=500>
 
+有些课也有可能没人上-0，有些学生可能不上课-0，有些教授可能页不讲课-0。
+
+<img src = "../assets/initial_conceptual_model_ex5_2.png" width=500>
+
+
 d) Define business rules  
 A student can enroll in max 4 courses.  
 A course can have 30 students.  
