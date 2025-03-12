@@ -46,10 +46,61 @@ physical data model using dbdiagram
 <img src = "../assets/PhysicallModel_hospital.png" width=500>
 
 e) 
+```sql
+CREATE TABLE hospital (
+    hospital_id SERIAL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    address TEXT
+);
 
+CREATE TABLE doctor (
+    doctor_id SERIAL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL
+);
 
+ALTER TABLE doctor
+ADD CONSTRAINT fk_hospital FOREIGN KEY (hospital_id) REFERENCES hospital(hospital_id);
+```
 
+---------------------
 
+## 2. Identify keys
+a)
+Possible candidate keys:
+- EmployeeID – Each employee has a unique ID.
+- E-post (Email) – Emails are usually unique for each employee.
+- Telefon (Phone Number) – If phone numbers are unique per employee, this could also be a candidate key.
+
+b)
+- Primary Key: EmployeeID (It’s a simple and numeric identifier, making it efficient for indexing and foreign key references.)
+- Alternate Keys: E-post (Email), Telefon (Phone Number) (since they are unique but not the best choice for a primary key due to potential changes over time.)
+
+c)
+- EmployeeID is a surrogate key, as it is an artificial unique identifier assigned to each employee instead of using a real-world attribute like email or phone number.
+
+d)
+- Here’s a Department table where AvdelningID (Department ID) is a primary key, and it connects to the Employee table as a foreign key.
+
+```sql
+CREATE TABLE Department (
+    DepartmentID INT PRIMARY KEY,
+    Name VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE Employee (
+    EmployeeID INT PRIMARY KEY,
+    FirstName VARCHAR(50) NOT NULL,
+    LastName VARCHAR(50) NOT NULL,
+    AvdelningID INT,  -- Foreign Key
+    Email VARCHAR(255) UNIQUE NOT NULL,
+    Phone VARCHAR(20) UNIQUE NOT NULL,
+    FOREIGN KEY (AvdelningID) REFERENCES Department(DepartmentID)
+);
+```
+
+----------------------------
+
+## 3. Sakila exercise
 
 
 
