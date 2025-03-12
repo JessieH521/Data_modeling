@@ -24,4 +24,38 @@ a) logical data model
                  
 b) Identify different keys on the various entities
 
+| Key Type         | Description                                                 |
+| ---------------- | ----------------------------------------------------------- |
+| Primary Key (PK) | 唯一标识每个实体的属性。例如 doctor_id 是 Doctor 表的主键。 |
+| Foreign Key (FK) | 连接不同表的外键。例如 department_id 在 Doctor_Department 里是外键，指向 Department 表。|
+| Composite Key | 由多个属性组合形成唯一性。例如 Doctor_Department 的 (doctor_id, department_id) 共同组成主键。|
+
+c) 
+1. Parent table (parent entity):
+Hospital, Department, Doctor are all primary entities.
+
+2. Child table (child entity):
+HospitalDepartment, HospitalDoctor, DepartmentDoctor are association（bridge） tables used to resolve many-to-many relationships.
+
+3. Why are they parent/child tables?
+Child tables contain foreign keys to reference the primary key of the parent table to ensure data integrity.    
+When deleting records from the parent table, the child table may be affected (such as foreign key constraints that prevent deletion).
+
+d)     
+physical data model using dbdiagram
+<img src = "../assets/PhysicallModel_hospital.png" width=500>
+
+e) 
+
+
+
+
+
+
+
+
+
+
+
+
 

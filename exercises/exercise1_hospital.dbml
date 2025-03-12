@@ -1,0 +1,47 @@
+Table Hospital {
+  hospital_id int [primary key]
+  name varchar(100) [not null]
+  address varchar(255)
+}
+
+Table Department {
+  department_id int [primary key]
+  name varchar(100) [not null]
+}
+
+Table Doctor {
+  doctor_id int [primary key]
+  name varchar(100) [not null]
+}
+
+Table HospitalDepartment {
+  hospital_department_id int [primary key]
+  hospital_id int [ref: > Hospital.hospital_id]
+  department_id int [ref: > Department.department_id]
+}
+
+Table HospitalDoctor {
+  hospital_doctor_id int [primary key]
+  hospital_id int [ref: > Hospital.hospital_id]
+  doctor_id int [ref: > Doctor.doctor_id]
+}
+
+Table DepartmentDoctor {
+  department_doctor_id int [primary key]
+  department_id int [ref: > Department.department_id]
+  doctor_id int [ref: > Doctor.doctor_id]
+}
+
+-- 医院
+INSERT INTO Hospital (name, address) VALUES ('City Hospital', '123 Main St'), ('General Hospital', '456 Elm St');
+
+-- 科室
+INSERT INTO Department (name) VALUES ('Cardiology'), ('Neurology'), ('Orthopedics');
+
+-- 医生
+INSERT INTO Doctor (name) VALUES ('Dr. Smith'), ('Dr. Brown'), ('Dr. Johnson');
+
+-- 关联表
+INSERT INTO HospitalDepartment (hospital_id, department_id) VALUES (1, 1), (1, 2), (2, 3);
+INSERT INTO HospitalDoctor (hospital_id, doctor_id) VALUES (1, 1), (1, 2), (2, 3);
+INSERT INTO DepartmentDoctor (department_id, doctor_id) VALUES (1, 1), (2, 2), (3, 3);
