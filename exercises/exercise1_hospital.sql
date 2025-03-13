@@ -51,3 +51,5 @@ INSERT INTO DepartmentDoctor (department_id, doctor_id) VALUES (1, 1), (2, 2), (
 SELECT * from Hospital;
 
 SELECT table_name FROM information_schema.tables WHERE table_schema = 'public';
+
+
