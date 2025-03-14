@@ -4,7 +4,7 @@
 
 Going back to the hospital exercise from exercise0, task 1, we will build logical and physical data models. This is the conceptual data model after we've added the composite entities to take care of many-to-many relationships.
 
-<img src = "../assets/conceptual_hospital.png" width=300>
+<img src = "../../assets/conceptual_hospital.png" width=300>
 
 a) Create a logical data model using lucidcharts
 
@@ -20,7 +20,7 @@ e) Create a few tables manually, insert given data plus some more, and try to ma
 
 a) logical data model
 
-<img src = "../assets/LogicalModel_hospital.png" width=500>
+<img src = "../../assets/LogicalModel_hospital.png" width=500>
                  
 b) Identify different keys on the various entities
 

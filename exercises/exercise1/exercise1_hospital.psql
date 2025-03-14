@@ -1,0 +1,69 @@
+CREATE schema if not EXISTS exercise1;
+
+CREATE TABLE exercise1.Hospital (
+    hospital_id SERIAL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    address VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE exercise1.Department (
+    department_id SERIAL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE exercise1.Doctor (
+    doctor_id SERIAL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE exercise1.HospitalDepartment (
+    hospital_department_id INTEGER PRIMARY KEY,
+    hospital_id INT REFERENCES exercise1.Hospital(hospital_id),
+    department_id INT REFERENCES exercise1.Department(department_id)
+);
+
+CREATE TABLE exercise1.HospitalDoctor (
+    hospital_doctor_id INTEGER PRIMARY KEY,
+    hospital_id INT REFERENCES exercise1.Hospital(hospital_id),
+    doctor_id INT REFERENCES exercise1.Doctor(doctor_id)
+);
+
+CREATE TABLE exercise1.DepartmentDoctor (
+    department_doctor_id INTEGER PRIMARY KEY,
+    department_id INT REFERENCES exercise1.Department(department_id),
+    doctor_id INT REFERENCES exercise1.Doctor(doctor_id)
+);
+
+
+-- 医院
+INSERT INTO exercise1.Hospital (name, address) VALUES ('City Hospital', '123 Main St'), ('General Hospital', '456 Elm St');
+
+-- 科室
+INSERT INTO exercise1.Department (name) VALUES ('Cardiology'), ('Neurology'), ('Orthopedics');
+
+-- 医生
+INSERT INTO exercise1.Doctor (name) VALUES ('Dr. Smith'), ('Dr. Brown'), ('Dr. Johnson');
+
+-- 关联表
+INSERT INTO exercise1.HospitalDepartment 
+VALUES (1, 1, 1), (2, 1, 2), (3, 2, 3);
+
+INSERT INTO exercise1.HospitalDoctor (hospital_id, doctor_id) VALUES (1, 1, 1), (2, 1, 2), (3, 2, 3);
+
+INSERT INTO exercise1.DepartmentDoctor (department_id, doctor_id) VALUES (1, 1), (2, 2), (3, 3);
+
+
+SELECT * from exercise1.Hospital;
+
+SELECT * from exercise1.HospitalDoctor;
+
+SELECT table_name FROM information_schema.tables WHERE table_schema = 'public';
+
+SELECT table_name FROM information_schema.tables WHERE table_schema = 'exercise1';
+
+
+-- DROP SCHEMA public CASCADE;
+-- CREATE SCHEMA public;
+
+
+
