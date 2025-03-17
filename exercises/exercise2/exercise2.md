@@ -13,9 +13,24 @@ Our beloved ice cream company Ezecream has a Sales table that looks like this
 | ...      | ...        | ...         | ...            | ...              | ...        | ...          | ...      |
 
 
+a) Find different problems with this table, so that Ezecream will take you in for internship to fix it for them
 
+b) Does this table satisfy 1NF, 2NF? Motivate.
 
+b) Normalize this table to 3NF, make conceptual diagram and relational schema notation for each relation. Relational schema notation is RelationName(attribute1, attribute2, ...)
 
+c) Now also add price attribute. Think about what would happen when price increases or decreases.
+
+d) Write SQL code to get the total price for Ragnar Lodbrok. Insert data into your tables and test it out.
+
+## 1. Sakila
+Use the same ERD from Sakila as in exercise1 task 3.
+
+a) Is this normalized to 3NF?
+
+b) Lets zoom in to the inventory, explain how it works for tracking films in each stores.
+
+c) Do we have a way to know if a film is rented out or not?
 
 
 
