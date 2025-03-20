@@ -33,6 +33,19 @@ b) Lets zoom in to the inventory, explain how it works for tracking films in eac
 c) Do we have a way to know if a film is rented out or not?
 
 
+## 2. Revisiting the doctor example
+Remember the doctor, hospital and department example from exercise0 and exercise1.
+
+a) Does the design fulfill 3NF, motivate based on the rules for the normal forms.
+
+b) You should have realised from this question in exercise1 0e)
+
+"Create a few tables manually, insert given data plus some more, and try to manually link foreign keys to primary keys. Can you satisfy that a doctor can work at several departments and several hospitals?"
+
+that this creates ambiguity. This can be solved with a ternary relationship, which connects three entities simultaneously. Now make a new iteration for this data model.
+
+c) In your design do you have bridge tables as well in addition to the ternary relationship. Motivate why you should or should not have them.
+
 
 
 
